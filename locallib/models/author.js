@@ -14,15 +14,11 @@ AuthorSchema.virtual('name').get(function () {
   return this.family_name + ', ' + this.first_name;
 });
 
-AuthorSchema
-.virtual('lifespan')
-.get(function () {
+AuthorSchema.virtual('lifespan').get(function () {
   return (this.date_of_death.getYear() - this.date_of_death.getYear()).toString();
-)
+});
 
-AuthorSchema
-.virtual('url')
-.get(function () {
+AuthorSchema.virtual('url').get(function () {
   return '/catalog/author/' + this._id;
 });
 
