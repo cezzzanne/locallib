@@ -1,0 +1,13 @@
+extends layout
+
+block content
+h1 = title
+p = Welcome to !{title}
+
+ul
+  each book in list
+    li
+      a(href=book.url)#{book.title}
+      |  (#{book.author.name})
+  else
+    li there are no books.
